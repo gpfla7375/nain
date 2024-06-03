@@ -22,7 +22,8 @@ public class MemberController {
 
     @PostMapping("/register")
     public ResponseEntity<Void> insertMemberRegister(@RequestBody MemberDto memberDto) {
-        log.info((""));
+        log.info(("insertMemberRegister : " + memberDto));
+        memberService.insertMemberRegister(memberDto);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 
