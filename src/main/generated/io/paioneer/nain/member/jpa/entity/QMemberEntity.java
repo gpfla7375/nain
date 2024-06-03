@@ -19,7 +19,29 @@ public class QMemberEntity extends EntityPathBase<MemberEntity> {
 
     public static final QMemberEntity memberEntity = new QMemberEntity("memberEntity");
 
+    public final StringPath admin = createString("admin");
+
+    public final DateTimePath<java.util.Date> expireDate = createDateTime("expireDate", java.util.Date.class);
+
+    public final StringPath memberEmail = createString("memberEmail");
+
+    public final StringPath memberName = createString("memberName");
+
+    public final StringPath memberNickName = createString("memberNickName");
+
     public final StringPath memberNo = createString("memberNo");
+
+    public final StringPath memberPwd = createString("memberPwd");
+
+    public final DateTimePath<java.util.Date> memberUpdate = createDateTime("memberUpdate", java.util.Date.class);
+
+    public final DateTimePath<java.util.Date> paymentDate = createDateTime("paymentDate", java.util.Date.class);
+
+    public final DateTimePath<java.util.Date> signUpDate = createDateTime("signUpDate", java.util.Date.class);
+
+    public final StringPath subscribeYN = createString("subscribeYN");
+
+    public final DateTimePath<java.util.Date> withDrawalDate = createDateTime("withDrawalDate", java.util.Date.class);
 
     public QMemberEntity(String variable) {
         super(MemberEntity.class, forVariable(variable));
