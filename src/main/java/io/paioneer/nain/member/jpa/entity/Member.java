@@ -16,7 +16,7 @@ import java.util.GregorianCalendar;
 @Builder
 @Table(name="TB_MEMBER")
 @Entity //jpa 가 관리함, repository 와 연결됨
-public class MemberEntity {
+public class Member {
     @Id
 
     @Column(name="MEMBER_NO", nullable = false)

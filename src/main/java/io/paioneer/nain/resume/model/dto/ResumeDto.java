@@ -17,7 +17,7 @@ import java.util.Date;
 @Component
 public class ResumeDto {
     private Long resumeNo;
-    private MemberEntity memberEntity;
+    private Long memberNo; // *entity 연결 유의
     private String title;
     private String resumeName;
     private String email;
@@ -27,9 +27,8 @@ public class ResumeDto {
     private Date modificationDate;
 
     public ResumeEntity toEntity() {
-        return ResumeEntity.builder()
+        ResumeEntity resumeEntity = ResumeEntity.builder()
                 .resumeNo(this.resumeNo)
-                .memberEntity(this.memberEntity)
                 .title(this.title)
                 .resumeName(this.resumeName)
                 .email(this.email)
@@ -38,7 +37,13 @@ public class ResumeDto {
                 .jobCategory(this.jobCategory)
                 .modificationDate(this.modificationDate)
                 .build();
+
+        // entity에서 값을 가져와서 넣어 줌 (memberNo)
+        if (this.memberNo != null) {
+            MemberEntity memberEntity = new MemberEntity();
+            memberEntity.setMemberNo(this.memberNo);
+            resumeEntity.setMemberEntity(memberEntity);
+        }
+        return resumeEntity;
     }
-
-
 }
