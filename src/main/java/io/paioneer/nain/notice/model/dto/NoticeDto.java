@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package io.paioneer.nain.notice.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -42,4 +41,3 @@ public class NoticeDto {
 
 
 }
-
