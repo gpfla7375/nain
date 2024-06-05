@@ -20,7 +20,7 @@ public class NoticeEntity {
     @Id     //JPA 가 객체를 관리할 때 식별할 기본키 지정하는 어노테이션임
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //primary key 지정하는 어노테이션
     @Column(name = "NOTICE_NO")
-    private int noticeNo;
+    private Long noticeNo;
 
     @Column(name = "NOTICE_TITLE", nullable = false, length = 50)
     private String noticeTitle;
@@ -28,7 +28,8 @@ public class NoticeEntity {
     @Column(name = "NOTICE_DATE", nullable = false)
     private java.util.Date noticeDate;
 
-    @Column(name = "MEMBER_NO", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MEMBER_NO")
     private Long memberNo;
 
     @Column(name = " NOTICE_CONTENT", nullable = false, length = 1000)
