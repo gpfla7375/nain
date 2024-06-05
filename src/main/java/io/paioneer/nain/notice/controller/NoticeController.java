@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package io.paioneer.nain.notice.controller;
 
 import io.paioneer.nain.notice.model.service.NoticeService;
