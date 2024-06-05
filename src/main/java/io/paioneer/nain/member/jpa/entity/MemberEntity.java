@@ -20,7 +20,7 @@ public class MemberEntity {
     @Id
 
     @Column(name="MEMBER_NO", nullable = false)
-    private String memberNo;            //회원 번호
+    private Long memberNo;            //회원 번호
 
     @Column(name="MEMBER_EMAIL", nullable = false, unique = true)
     private String memberEmail;         //회원 이메일, 아이디로 사용됨
