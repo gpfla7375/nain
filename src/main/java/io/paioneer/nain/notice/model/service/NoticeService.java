@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package io.paioneer.nain.notice.model.service;
 
 import io.paioneer.nain.notice.jpa.repository.NoticeQueryRepository;
@@ -19,4 +18,3 @@ public class NoticeService {
 
 
 }
-
