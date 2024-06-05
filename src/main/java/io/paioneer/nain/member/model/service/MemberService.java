@@ -28,15 +28,6 @@ public class MemberService {
         return memberRepository.save(memberDto.toEntity()).toDto();
     }
 
-    public Long selectEmailCheck(String email) {
-        Optional<Member> member = memberRepository.findByMemberEmail(email);
-        if (member.isPresent()) {
-            return member.get().getMemberEmail();
-        }else{
-            return 0L;
-        }
-    }
-
 }
 
 
