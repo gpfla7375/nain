@@ -10,8 +10,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -24,6 +26,15 @@ public class MemberService {
     public MemberDto insertMemberRegister(MemberDto memberDto) {
 
         return memberRepository.save(memberDto.toEntity()).toDto();
+    }
+
+    public Long selectEmailCheck(String email) {
+        Optional<Member> member = memberRepository.findByMemberEmail(email);
+        if (member.isPresent()) {
+            return member.get().getMemberEmail();
+        }else{
+            return 0L;
+        }
     }
 
 }
