@@ -20,6 +20,11 @@ import java.util.List;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Transactional
+    public MemberDto insertMemberRegister(MemberDto memberDto) {
+
+        return memberRepository.save(memberDto.toEntity()).toDto();
+    }
 
 }
 
