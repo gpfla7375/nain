@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package io.paioneer.nain.notice.jpa.repository;
 
 import io.paioneer.nain.notice.jpa.entity.NoticeEntity;
