@@ -1,5 +1,6 @@
-package io.paioneer.nain.trend.controller;
+package io.paioneer.nain.notice.controller;
 
+import io.paioneer.nain.notice.model.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -7,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequiredArgsConstructor
 @RestController
-@RequestMapping("/trends")
+@RequestMapping("/notices")
+@RequiredArgsConstructor
 @CrossOrigin
-public class TrendController {
+public class NoticeController {
+    private final NoticeService noticeService;
+
+
+
 }
+

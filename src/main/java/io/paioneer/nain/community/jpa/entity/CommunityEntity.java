@@ -1,6 +1,8 @@
 package io.paioneer.nain.community.jpa.entity;
 
-import io.paioneer.nain.member.jpa.entity.Member;
+
+import io.paioneer.nain.community.model.dto.CommunityDto;
+import io.paioneer.nain.member.jpa.entity.MemberEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,8 +23,8 @@ public class CommunityEntity {
     private Long communityNo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="MEMBER_NO", insertable = false, updatable = false)
-    private Member memberEntity;
+    @JoinColumn(name="MEMBER_NO", referencedColumnName = "MEMBER_NO")
+    private MemberEntity memberEntity;
 
     @Column(name="TITLE", nullable = false)
     private String title;
@@ -31,7 +33,7 @@ public class CommunityEntity {
     private String content;
 
     @Column(name="FILE_UPLOAD", nullable = false)
-    private String filedUpload;
+    private String fileUpload;
 
     @Column(name="FILE_MODIFIED", nullable = false)
     private String fileModified;
@@ -41,4 +43,15 @@ public class CommunityEntity {
 
     @Column(name="READCOUNT", nullable = false)
     private String readCount;
+
+    public CommunityEntity(CommunityDto communityDto){
+        this.communityNo = communityDto.getCommunityNo();
+        this.memberEntity = communityDto.getMemberEntity();
+        this.title = communityDto.getTitle();
+        this.content = communityDto.getContent();
+        this.fileUpload = communityDto.getFileUpload();
+        this.fileModified = communityDto.getFileModified();
+        this.communityDate = communityDto.getCommunityDate();
+        this.readCount = communityDto.getReadCount();
+    }
 }
