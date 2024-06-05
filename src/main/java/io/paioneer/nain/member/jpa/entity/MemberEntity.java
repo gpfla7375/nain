@@ -20,10 +20,10 @@ public class MemberEntity {
     @Id
 
     @Column(name="MEMBER_NO", nullable = false)
-    private String memberNo;            //회원 번호
+    private Long memberNo;            //회원 번호
 
-    @Column(name="MEMBER_EMAIL", nullable = false)
-    private String memberEmail;         //회원 이메일
+    @Column(name="MEMBER_EMAIL", nullable = false, unique = true)
+    private String memberEmail;         //회원 이메일, 아이디로 사용됨
 
     @Column(name="MEMBER_PWD")
     private String memberPwd;           //회원 비밀번호
@@ -62,7 +62,6 @@ public class MemberEntity {
         signUpDate = new GregorianCalendar().getGregorianChange();
         withDrawalDate = new GregorianCalendar().getGregorianChange();
         memberUpdate = new GregorianCalendar().getGregorianChange();
-
     }
 
     public MemberDto toDto() {
