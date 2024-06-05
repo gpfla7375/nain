@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class SkillEntity {
     @Id
     @Column(name="SKILL_NAME", nullable = false)
-    private Long skillName;
+    private String skillName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="RESUME_NO", insertable = false, updatable = false)

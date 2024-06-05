@@ -21,7 +21,7 @@ public class ResumeEntity {
     @Column(name="RESUME_NO", nullable = false)
     private Long resumeNo;            //이력서 번호
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) // *DTO 연결 유의
     @JoinColumn(name="MEMBER_NO", insertable = false, updatable = false)
     private MemberEntity memberEntity;//회원번호
 
@@ -49,7 +49,8 @@ public class ResumeEntity {
     public ResumeDto toDto() {
         return ResumeDto.builder()
                 .resumeNo(this.resumeNo)
-                .memberEntity(this.memberEntity)
+//                .memberNo(this.memberEntity.getMemberNo())
+                .memberNo(this.memberEntity != null ? this.memberEntity.getMemberNo() : null)
                 .title(this.title)
                 .resumeName(this.resumeName)
                 .email(this.email)
