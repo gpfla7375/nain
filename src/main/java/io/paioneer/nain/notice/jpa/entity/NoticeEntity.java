@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package io.paioneer.nain.notice.jpa.entity;
 
 import io.paioneer.nain.notice.model.dto.NoticeDto;
@@ -56,6 +55,5 @@ public class NoticeEntity {
 
 
 }
-
 
 
