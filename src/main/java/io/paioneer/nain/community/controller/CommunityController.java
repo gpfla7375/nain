@@ -16,5 +16,4 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommunityController {
     private final CommunityService communityService;
     private final CommentService commentService;
-
 }
