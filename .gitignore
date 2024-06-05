@@ -17,7 +17,7 @@ build.gradle
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
+/src/main/generated/**
 ### IntelliJ IDEA ###
 .idea
 *.iws
