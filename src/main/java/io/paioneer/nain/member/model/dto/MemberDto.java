@@ -1,6 +1,6 @@
 package io.paioneer.nain.member.model.dto;
 
-import io.paioneer.nain.member.jpa.entity.MemberEntity;
+import io.paioneer.nain.member.jpa.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,8 +29,8 @@ public class MemberDto {
     private Date withDrawalDate;        //회원 탈퇴일
     private Date memberUpdate;          //회원 정보수정일
 
-    public MemberEntity toEntity() {
-        return MemberEntity.builder()
+    public Member toEntity() {
+        return Member.builder()
                 .memberNo(this.memberNo)
                 .memberEmail(this.memberEmail)
                 .memberPwd(this.memberPwd)

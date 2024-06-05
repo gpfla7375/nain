@@ -1,6 +1,6 @@
 package io.paioneer.nain.community.jpa.entity;
 
-import io.paioneer.nain.member.jpa.entity.MemberEntity;
+import io.paioneer.nain.member.jpa.entity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,7 +22,7 @@ public class CommunityEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="MEMBER_NO", insertable = false, updatable = false)
-    private MemberEntity memberEntity;
+    private Member memberEntity;
 
     @Column(name="TITLE", nullable = false)
     private String title;
