@@ -17,7 +17,7 @@ import java.util.Date;
 public class MemberDto {
 
     private String memberNo;            //회원 번호
-    private String memberEmail;         //회원 이메일
+    private String memberEmail;         //회원 이메일, 회원아이디로 사용됨
     private String memberPwd;           //회원 비밀번호
     private String memberName;          //회원 이름
     private String memberNickName;      //회원 닉네임
