@@ -1,18 +1,13 @@
 package io.paioneer.nain.member.model.service;
 
-import io.paioneer.nain.member.jpa.entity.MemberEntity;
+import io.paioneer.nain.member.jpa.entity.Member;
 import io.paioneer.nain.member.jpa.repository.MemberRepository;
 import io.paioneer.nain.member.model.dto.MemberDto;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Member;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j

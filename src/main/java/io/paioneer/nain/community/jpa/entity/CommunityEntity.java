@@ -1,5 +1,6 @@
 package io.paioneer.nain.community.jpa.entity;
 
+
 import io.paioneer.nain.community.model.dto.CommunityDto;
 import io.paioneer.nain.member.jpa.entity.MemberEntity;
 import jakarta.persistence.*;
