@@ -49,7 +49,7 @@ public class ResumeEntity {
     public ResumeDto toDto() {
         return ResumeDto.builder()
                 .resumeNo(this.resumeNo)
-                .memberEntity(this.memberEntity.getMemberNo())
+                .memberEntity(this.memberEntity)
                 .title(this.title)
                 .resumeName(this.resumeName)
                 .email(this.email)
