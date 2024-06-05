@@ -1,5 +1,6 @@
 package io.paioneer.nain.community.jpa.entity;
 
+import io.paioneer.nain.community.model.dto.CommentDto;
 import io.paioneer.nain.member.jpa.entity.MemberEntity;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
@@ -22,14 +23,14 @@ public class CommentEntity {
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="MEMBER_NO", insertable = false, updatable = false)
-    private MemberEntity member;
+    private MemberEntity memberEntity;
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="COMMUNITY_NO", insertable = false, updatable = false)
+    @JoinColumn(name="COMMUNITY_NO", referencedColumnName = "COMMUNITY_NO")
     private CommunityEntity communityEntity;
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="COMMENT_NO", insertable = false, updatable = false)
+    @JoinColumn(name="COMMENT_PARENT", referencedColumnName = "COMMENT_NO")
     private CommentEntity commentEntity;
 
     @Column(name="COMMENT_CONTENT", nullable=false)
@@ -37,4 +38,13 @@ public class CommentEntity {
 
     @Column(name="COMMENT_DATE", nullable=false)
     private Date commentDate;
+
+    public CommentEntity(CommentDto commentDto){
+        this.commentNo = commentDto.getCommentNo();
+        this.memberEntity = commentDto.getMemberDto().toEntity();
+        this.communityEntity = new CommunityEntity(commentDto.getCommunityDto());
+        this.commentEntity = new CommentEntity(commentDto.getCommentDto());
+        this.content = commentDto.getContent();
+        this.commentDate = commentDto.getCommentDate();
+    }
 }
