@@ -20,6 +20,7 @@ public class CommentRepositoryImpl implements CommentRepositoryCustom {
     public List<CommentEntity> selectCommentList(Long communityNo) {
         return queryFactory
                 .selectFrom(commentEntity)
+                .fetch();
                 .where(commentEntity.communityNo.eq(communityNo));
     }
 }
